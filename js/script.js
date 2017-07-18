@@ -94,7 +94,7 @@ jQuery( document ).ready(function() {
    * set dynamic year of copyright on footer
    */
   function setDynamicCopyrightYear() {
-    $( '.copyright' ).find( 'span.year' ).text( '2015' );
+    $( '.copyright' ).find( 'span.year' ).text( '2017' );
   }
 
   /**
