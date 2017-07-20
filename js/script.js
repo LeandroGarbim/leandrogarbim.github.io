@@ -1,7 +1,7 @@
 /**
- * check element is exists, not null, not empty
+ * verifica se o elemento "existe", not null, not empty
  *
- * @param  {Element} $element element that you want to check
+ * @param  {Element} $element elemento que quero verificar
  * @return {Boolean}
  */
 function isExists( $element ) {
@@ -9,17 +9,16 @@ function isExists( $element ) {
 }
 
 /**
- * check attr is exists
+ * verifica se attr existe
  *
- * @param  {Element} $element element that you want to check
+ * @param  {Element} $element elemento que quero verificar
  * @param  {String}  attrName attr name of element
  * @return {Boolean}
  */
 function hasAttr( $element, attrName ) {
   var attr = $element.attr( attrName );
   
-  // some browsers, `attr` is undefined
-  // some browsers, `attr` is false
+
   if (typeof attr !== typeof undefined && attr !== false) {
     return true;
   } else {
@@ -28,10 +27,10 @@ function hasAttr( $element, attrName ) {
 }
 
 /**
- * check attr 'data-*' is exists
+ * verifica attr "data-*" existe
  *
- * @param  {Element} $element     element that you want to check
- * @param  {String}  dataAttrName attr name that you want to check (e.g. 'test', function will looking for 'data-test')
+ * @param  {Element} $element     elemento que quero verificar
+ * @param  {String}  dataAttrName attr name que quero verificar (e.g. 'test', function will looking for 'data-test')
  * @return {Boolean} 
  */
 function hasDataAttr( $element, dataAttrName ) {
@@ -40,13 +39,11 @@ function hasDataAttr( $element, dataAttrName ) {
 
 jQuery( document ).ready(function() {
   
-  // declaration
+  
   var $toTopBtn = $( '.to-top-btn' );
   var $contactFormBtn = $( '.contact-btn' );
 
-  /**
-   * bind go to top function on the button
-   */
+
   function setGoToTopBtn() {
     $toTopBtn.click(function( e ) {
       e.preventDefault();
@@ -55,7 +52,7 @@ jQuery( document ).ready(function() {
   }
 
   /**
-   * slide toggle of contact form panel
+   * painel formulario slide
    */
   function setContactFormPanelBtn() {
     var $contactFormPanel = $( '.contact-panel' );
@@ -69,9 +66,7 @@ jQuery( document ).ready(function() {
     })
   }
 
-  /**
-   * set preload then hide when load complete (unused)
-   */
+
   function setPreload() {
     var $loading = $( '#loading' );
     var delayTime = 600;
@@ -90,18 +85,14 @@ jQuery( document ).ready(function() {
     }, delayTime );
   }
 
-  /**
-   * set dynamic year of copyright on footer
-   */
+
   function setDynamicCopyrightYear() {
     $( '.copyright' ).find( 'span.year' ).text( '2017' );
   }
   
 
 
-  /**
-   * set all functions that have to check when you scroll
-   */
+
   function setWindowScrollFunction() {
     var offset = $( window ).height() / 2;
     if ( $( this ).scrollTop() > offset ) {
@@ -126,9 +117,7 @@ jQuery( document ).ready(function() {
     }
   }
 
-  /**
-   * initial all script functions
-   */
+
   var initMainScript = new function() {
     
     setWindowScrollFunction();
@@ -136,19 +125,15 @@ jQuery( document ).ready(function() {
     setContactFormPanelBtn();
     setDynamicCopyrightYear();
 
-    // setPreload();
+
   }
 
-  /**
-   * when window scroll
-   */
+
   $( window ).scroll(function() {
     setWindowScrollFunction();
   });
 
-  /**
-   * when window resize
-   */
+  
   $( window ).resize(function() {
     
   });
