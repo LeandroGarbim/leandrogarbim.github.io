@@ -22,7 +22,6 @@
 
 
 <body>
-<?php include_once("analyticstracking.php") ?>
 <div id="page" class="container">
   <div id="header">    
     <div class="header-min cv-section">
@@ -444,6 +443,7 @@
 </div>
 <!-- .addon -->
 <!-- dev -->
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">window.jQuery || document.write('<script src="vendor/jquery/jquery-2.1.3.min.js"><\/script>')</script>
 <script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
@@ -457,6 +457,16 @@
    (function(){
       emailjs.init("user_SLxItPtFq2HdJ6xlQc5zz");
    })();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102949735-1', 'auto');
+  ga('send', 'pageview');
+
 </script>
 
 <script type="text/javascript" src="js/vendor.js"></script>
