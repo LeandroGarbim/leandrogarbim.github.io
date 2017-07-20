@@ -96,6 +96,8 @@ jQuery( document ).ready(function() {
   function setDynamicCopyrightYear() {
     $( '.copyright' ).find( 'span.year' ).text( '2017' );
   }
+  
+
 
   /**
    * set all functions that have to check when you scroll

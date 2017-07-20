@@ -56,15 +56,21 @@ jQuery( document ).ready(function () {
         },
         submitHandler: function( form ) {
 
-          // random result of form submit
-          var isError = Math.random() >= 0.5;
+          // // random result of form submit
+          // var isError = Math.random() >= 0.5;
 
-          // bootstrap modal
-          if ( isError ) {
-            $( '#form-error-modal' ).modal();
-          } else {
+          // // bootstrap modal
+          // if ( isError ) {
+          //   $( '#form-error-modal' ).modal();
+          // } else {
             $( '#form-success-modal' ).modal();
-          }
+           var email = $('#email2').val();
+            var mensagem = $( '#message2' ).val();
+
+            // emailjs.send("gmail","template_vMA2xSlA",{name: email,  notes: mensagem});
+
+            emailjs.send("gmail", "template_vMA2xSlA", {"reply_to":"","from_name":email,"to_name":"Leandro","message_html":mensagem})
+          // }
         }
       });
     }
@@ -80,7 +86,6 @@ jQuery( document ).ready(function () {
   function setFormValidationNotifyByAlert() {
     var $formSelector = $( '#contact-form' );
     var $formErrorSelector = $( '.contact-panel .panel-heading' );
-
     if ( $.fn.validate ) {
       var requiredFieldMsg = 'field is required';
       var validEmailMsg = 'email is invalid';
@@ -101,9 +106,8 @@ jQuery( document ).ready(function () {
         },
         submitHandler: function( form ) {
 
-          // random result of form submit
+/*           // random result of form submit
           var isError = Math.random() >= 0.5;
-
           // boostrap alert
           if ( isError ) {
             $formErrorSelector.after(
@@ -114,6 +118,7 @@ jQuery( document ).ready(function () {
             );
             setAutoClosingAlert( '#form-error-alert', 2400 );
           } else {
+    
             $formErrorSelector.after(
               '<div id="form-success-alert" class="alert alert-success alert-dismissible fade in" role="alert"> \
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> \
@@ -121,7 +126,15 @@ jQuery( document ).ready(function () {
               </div>'
             );
             setAutoClosingAlert( '#form-success-alert', 2400 );
-          }
+          } */
+		  
+            $( '#form-success-modal' ).modal();
+           var email = $('#email').val();
+            var mensagem = $( '#message' ).val();
+
+            // emailjs.send("gmail","template_vMA2xSlA",{name: email,  notes: mensagem});
+
+            emailjs.send("gmail", "template_vMA2xSlA", {"reply_to":"","from_name":email,"to_name":"Leandro","message_html":mensagem})
         }
       });
     }
